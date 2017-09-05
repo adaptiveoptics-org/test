@@ -19,14 +19,10 @@
  * 
  */
 
-
-
 #define _GNU_SOURCE
 
 // uncomment for test print statements to stdout
 //#define _PRINT_TEST
-
-
 
 /* =============================================================================================== */
 /* =============================================================================================== */
@@ -44,8 +40,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/syscall.h> // needed for tid = syscall(SYS_gettid);
-
-
 
 #ifdef __MACH__
 #include <mach/mach_time.h>
@@ -76,7 +70,6 @@ int clock_gettime(int clk_id, struct mach_timespec *t) {
 //#include <ncurses.h>
 #include <semaphore.h>
 
-
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_math.h>
 #include <gsl/gsl_eigen.h>
@@ -101,14 +94,11 @@ int clock_gettime(int clk_id, struct mach_timespec *t) {
 #include "statistic/statistic.h"
 #include "fft/fft.h"
 
-
 #include "AOloopControl_IOtools/AOloopControl_IOtools.h"
 #include "AOloopControl_PredictiveControl/AOloopControl_PredictiveControl.h"
 #include "AOloopControl_acquireCalib/AOloopControl_acquireCalib.h"
 #include "AOloopControl_computeCalib/AOloopControl_computeCalib.h"
 #include "AOloopControl_perfTest/AOloopControl_perfTest.h"
-
-
 
 #ifdef HAVE_CUDA
 #include "cudacomp/cudacomp.h"
@@ -119,19 +109,11 @@ int clock_gettime(int clk_id, struct mach_timespec *t) {
 #define OMP_NELEMENT_LIMIT 1000000
 # endif
 
-
-
 /* =============================================================================================== */
 /* =============================================================================================== */
 /*                                      DEFINES, MACROS                                            */
 /* =============================================================================================== */
 /* =============================================================================================== */
-
-
-
-
-
-
 
 // data passed to each thread
 //typedef struct
@@ -141,19 +123,11 @@ int clock_gettime(int clk_id, struct mach_timespec *t) {
 //    float *result; // where to white status
 //} THDATA_IMTOTAL;
 
-
-
-
-
-
 /* =============================================================================================== */
 /* =============================================================================================== */
 /*                                  GLOBAL DATA DECLARATION                                        */
 /* =============================================================================================== */
 /* =============================================================================================== */
-
-
-
 
 
 /* =============================================================================================== */
@@ -166,7 +140,6 @@ static int AOLOOPCONTROL_logfunc_level = 0;
 static int AOLOOPCONTROL_logfunc_level_max = 2; // log all levels equal or below this number
 static char AOLOOPCONTROL_logfunc_fname[] = "AOloopControl.fcall.log";
 static char flogcomment[200];
-
 
 // GPU MultMat indexes
 //
@@ -182,11 +155,6 @@ static char flogcomment[200];
 //         int AOloopControl_GPUmodecoeffs2dm_filt_loop(char *modecoeffs_name, char *DMmodes_name, int semTrigg, char *out_name, int GPUindex, long loop, int offloadMode)
 //
 // 4: Predictive control (in modules linARfilterPred)
-
-
-
-
-
 
 
 // TIMING
